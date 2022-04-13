@@ -2,6 +2,7 @@
 package pkg
 
 type FlashCard struct {
+    ID              string      `json:"id"`
     Question        string      `json:"question"`
     Answer          string      `json:"answer"`
     Tag             string      `json:"tag"`
@@ -11,7 +12,4 @@ type FlashCard struct {
     SuccessRate     float64     `json:"successrate"` 
 }
 
-type FlashCardDB struct {
-    FlashCards []FlashCard      `json:"flashcards"`
-}
 

@@ -2,47 +2,75 @@
 package pkg
 
 import (
+	"bufio"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
+	"log"
 	"os"
-    "log" 
+	"strings"
+	"github.com/rs/xid"
 )
 
 func CreateFlashCard() {
-    // Creating empty instance of the FlashCard struct.
+    // We need to locate where the file will be stored
+
+    // Opening database file
+    // os.CREATE ensures that if there is no file, the file will be created.
+    jsonFile, err := os.OpenFile("flashcard.json", os.O_RDWR|os.O_CREATE, 0755)
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    // Reading from database file
+    jsonData, err := ioutil.ReadAll(jsonFile)
+    if err != nil {
+        fmt.Println(err)
+    }
+
+    // flashcards is used for updating the database
+    // flashcard is the new flashcard to be added. 
+    var flashcards []FlashCard
     var flashcard FlashCard
+
+    // Unmarshalling the flashcard json file
+    if err := json.Unmarshal(jsonData, &flashcards); err != nil {
+        log.Println(err)
+    }
+
+    // Creating input reader
+    // The input reader is needed to be able to read strings with spaces.
+    inputReader := bufio.NewReader(os.Stdin)
 
     // Enter data
     fmt.Printf("Enter question: ")
-    fmt.Scanf("%s\n", &flashcard.Question) 
+    question, _ := inputReader.ReadString('\n') 
+    flashcard.Question = strings.Trim(question, "\n")
 
     fmt.Printf("Enter answer: ")
-    fmt.Scanf("%s\n", &flashcard.Answer) 
+    answer, _ := inputReader.ReadString('\n') 
+    flashcard.Answer = strings.Trim(answer, "\n")
 
     fmt.Printf("Enter tag: ")
-    fmt.Scanf("%s\n", &flashcard.Tag)
+    tag, _ := inputReader.ReadString('\n') 
+    flashcard.Tag = strings.Trim(tag, "\n")
 
     flashcard.Completed = 0
     flashcard.Goal = 5
     flashcard.Tries = 0
     flashcard.SuccessRate = 0.0
+    flashcard.ID = xid.New().String()
 
 
-    // We need to open the file in append mode.
-    f, err := os.OpenFile("flashcard.json", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+    // Adding the new flashcard to the array of flashcards read from the db. 
+    flashcards = append(flashcards, flashcard)
+
+    newJsonData, err := json.MarshalIndent(flashcards, "", " ")
     if err != nil {
-        log.Fatal(err)
+        log.Println(err)
     }
 
-    // The file variable is used to write a struct to json format.
-    file, _ := json.MarshalIndent(flashcard, "", " ")
-
-    // Appending newly created flashcard to our json file
-    if _, err := f.Write(file); err != nil {
-        log.Fatal(err)
-    }
-    if err := f.Close(); err != nil {
-        log.Fatal(err) 
-    }
+    err = ioutil.WriteFile("flashcard.json", newJsonData, 0644)
 
 }
+
