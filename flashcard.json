@@ -1,9 +1,59 @@
 [
  {
-  "id": "c9br61hsluv2rie6b5h0",
-  "question": "ome/slinde/Documents/Repos/flash-card-cli/flashcard.json",
-  "answer": "lkajsdf",
-  "tag": "alskdjf",
+  "id": "c9bueg5vqc7k2t7cpeb0",
+  "question": "Explain the context switching done by an operating system",
+  "answer": "Context switching is the act of moving the processor (CPU) between different processes. Context switching is done by saving the state of the current process, and making the CPU process another program. This way a single CPU can run multiple processes at once.",
+  "tag": "Computer Systems",
+  "goal": 5,
+  "completed": 0,
+  "tries": 0,
+  "successrate": 0
+ },
+ {
+  "id": "c9bugj5vqc7k4fdp56v0",
+  "question": "Explain the memory hierarchy and why it is important.",
+  "answer": "The memory hierarchy is the organizational structure of storage devices in a computer system. At the top of the memory hierarchy is the register, the component of the CPU that stores the information about the next process that is going to be run. The register is by far the fastest and smallest storage device on a computer system. At the bottom is the remote secondary storage (web storage etc.) which is the slowest to access but also the one that might be the largest. Just on top of this is the local secondary storage (local disks). It is important to know about the memory hierarchy as most of the time spent running programs is on copying information from different locations in the system. Thus, if we can optimize our programs to minimize or increase the speed of this we imigth achieve an order of magnitude increased performance.",
+  "tag": "Computer Systems",
+  "goal": 5,
+  "completed": 0,
+  "tries": 0,
+  "successrate": 0
+ },
+ {
+  "id": "c9buhp5vqc7k5tad02dg",
+  "question": "What are the two tasks of the operating system?",
+  "answer": "The first task is to protect the hardware from misuse. The second is to provide applications with simple and uniform mechanisms for manipulating complicated and often wildly different low-level hardware devices.",
+  "tag": "Computer Systems",
+  "goal": 5,
+  "completed": 0,
+  "tries": 0,
+  "successrate": 0
+ },
+ {
+  "id": "c9buifdvqc7k6c8t615g",
+  "question": "What are the fundamental abstractions of the operating system?",
+  "answer": "The first is files, which are abstractions for I/O devices. The second is virtual memory, which is an abstraction for both main memory and I/O devices. The third is processes, which are abstractions for main memory, I/O devices and the processor.",
+  "tag": "Computer Systems",
+  "goal": 5,
+  "completed": 0,
+  "tries": 0,
+  "successrate": 0
+ },
+ {
+  "id": "c9bukjdvqc7k7enpcu5g",
+  "question": "What is an operating system kernel and where does it reside?",
+  "answer": "The operating system kernel is a collection of code and data structures that the system uses to manage all the processes. The kernel part of the operating system always resides in the main memory, ready to be used.",
+  "tag": "Computer Systems",
+  "goal": 5,
+  "completed": 0,
+  "tries": 0,
+  "successrate": 0
+ },
+ {
+  "id": "c9busmdvqc7k9dc1mhn0",
+  "question": "What is virtual memory and what are its components?",
+  "answer": "Virtual memory is an abstraction that provides each process with the illusion that it has exclusive use of the main memory. Each process has the same uniform view of memory, known as its virtual address space. The virtual address space is split into five locations: 1) Code and data, begins at the same fixed address and is fixed in length after initialization of the program, 2) Heap,, controlled by malloc and free in C and can expand and contract in size, 3) Shared libraries, such as the C standard library and the math library, 4) Stack, dynamically sized memory for function calls, expands when a function is called and c contracts when the function is returned, 5) Kernel virtual memory, the virtual address space for the kernel.",
+  "tag": "Computer Systems",
   "goal": 5,
   "completed": 0,
   "tries": 0,
