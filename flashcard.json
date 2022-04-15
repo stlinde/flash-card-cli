@@ -32,7 +32,7 @@
  {
   "id": "c9buifdvqc7k6c8t615g",
   "question": "What are the fundamental abstractions of the operating system?",
-  "answer": "The first is files, which are abstractions for I/O devices. The second is virtual memory, which is an abstraction for both main memory and I/O devices. The third is processes, which are abstractions for main memory, I/O devices and the processor.",
+  "answer": "The first is files, which are abstractions for I/O devices. The second is virtual memory, which is an abstraction for program memory, including both main memory and I/O devices. The third is processes, which are abstractions for the running program, including main memory, I/O devices and the processor.",
   "tag": "Computer Systems",
   "goal": 5,
   "completed": 0,
@@ -53,6 +53,56 @@
   "id": "c9busmdvqc7k9dc1mhn0",
   "question": "What is virtual memory and what are its components?",
   "answer": "Virtual memory is an abstraction that provides each process with the illusion that it has exclusive use of the main memory. Each process has the same uniform view of memory, known as its virtual address space. The virtual address space is split into five locations: 1) Code and data, begins at the same fixed address and is fixed in length after initialization of the program, 2) Heap,, controlled by malloc and free in C and can expand and contract in size, 3) Shared libraries, such as the C standard library and the math library, 4) Stack, dynamically sized memory for function calls, expands when a function is called and c contracts when the function is returned, 5) Kernel virtual memory, the virtual address space for the kernel.",
+  "tag": "Computer Systems",
+  "goal": 5,
+  "completed": 0,
+  "tries": 0,
+  "successrate": 0
+ },
+ {
+  "id": "c9c0r3lvqc7kni9rrh5g",
+  "question": "Give a definition of Amdahl's Law.",
+  "answer": "Amdahl's law states that the effect of an increase in onperformance in one part of a programs is determined by the size of the increase in performance and the significance of the part of the program on the whole program. Thus, a component that originally took (alpha * T_old), takes (alpha * T_old)/k after thee increase, where alpha is the significance and k is the performance increase. The overall increase in program performance can eb computed as S = 1 / ((1 - alpha) + alpha / k). The eoverall effect of the performance increase in one part of the system is thus smaller than the effect on the individual part.",
+  "tag": "Computer Systems",
+  "goal": 5,
+  "completed": 0,
+  "tries": 0,
+  "successrate": 0
+ },
+ {
+  "id": "c9c0srtvqc7kolbdnb00",
+  "question": "Describe concurrency and parallelism in simple terms.",
+  "answer": "Concurrency refer to the general concept of a system with multiple, simultaneous activities. Parallelism refers to the use of concurrency to make a system run faster.",
+  "tag": "Computer Systems",
+  "goal": 5,
+  "completed": 0,
+  "tries": 0,
+  "successrate": 0
+ },
+ {
+  "id": "c9c2bf5vqc7l3pjbm6rg",
+  "question": "What is a pointer and how might it differ between machines?",
+  "answer": "A pointer is an virtual address in the virtual address space. Pointers are the way the computer knows where to look for data or instructions when running computations. Pointers also include what type the data is at the location. The pointer can differ between machines if there are differences in the word size. The word size is the nominal size of pointer data. A 32-bit machine has a word size of 32-bits and a 64-bit machine has a word size of 64 bits. Most modern computers use the 64-bit word size, as it allows the virtual address space to scale up to 16 exabytes, whereas the 32-bit word size only allows 4 gigabytes.",
+  "tag": "Computer Systems",
+  "goal": 5,
+  "completed": 0,
+  "tries": 0,
+  "successrate": 0
+ },
+ {
+  "id": "c9c2g7lvqc7l5l0ujdf0",
+  "question": "Explain little-endian and big-endian?",
+  "answer": "The endians are ways of sorting the bytes representing program object. Little-endian is the convention where the least significant bytes comes first and big-endian is the convention where the most significant byte comes first. There are no benefits of choosing one over the other. Most Intel-compatible machines operate exclusively on little-endian, while most machines from IBM and Oracle operate in big-endian mode. Many recent micro-processor chips are bi-endian. However, byteordering becomes fixed once a particular operating system is chosen.",
+  "tag": "Computer Systems",
+  "goal": 5,
+  "completed": 0,
+  "tries": 0,
+  "successrate": 0
+ },
+ {
+  "id": "c9c2hrtvqc7l6kh1fovg",
+  "question": "In which applications can byteordering become an issue?",
+  "answer": "When binary data are communicated over a network between different machines. A common problem is for data produced by a little-endian machine to be sent to a big-endian machine, or vice versa, leading to the bytes within the words being in reverse for the receiving program. To avoid such problems, code written for network applications must follow established conventions for byteordering. A second case where byteordering becomes important is when looking at the byte sequences representing iteger data. This occurs when inspecting machine-level programs. A third case where byteordering become visible is when programs are written that circumvent the normal type system. In the C language, this can be done using a cast or a union to allow an object to be referenced according to a different data type from which it was created. Such tricks are strongly discouraged for most application programming, but they can be quite useful and even necessary for system-level programming.",
   "tag": "Computer Systems",
   "goal": 5,
   "completed": 0,
