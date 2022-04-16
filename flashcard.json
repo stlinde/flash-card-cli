@@ -108,5 +108,25 @@
   "completed": 0,
   "tries": 0,
   "successrate": 0
+ },
+ {
+  "id": "c9d6tj5vqc7jv7gckcb0",
+  "question": "Explain a stack in the context of x64 Assembly.",
+  "answer": "A stack is a data structure where values can be added or deleted, but only according to the last-in, first-out discipline. We add data to a stack via a push operation and remove it via a pop operation, with the property that the value popped will always be the value that was most recently pushed on the stack. A stack can be implemented as an array, where we always insert and remove elements from one end of the array. This end is called the top of the stack. With x86-64, the program stack is stored in some region of memory. The stack grows downward such that the top element of the stack has the lowest address of all stack elements. The stack pointer %rsp holds the address of the top stack element. The pushq instruction provides the ability to push data onto the stack, while the popq instruction pops it.",
+  "tag": "Computer Systems",
+  "goal": 5,
+  "completed": 0,
+  "tries": 0,
+  "successrate": 0
+ },
+ {
+  "id": "c9da7n5vqc7l8u5k3b1g",
+  "question": "What are constants in golang?",
+  "answer": "A constant in golang declares a constant value. A const statement can appear anywhere a var statement can. Constant expressions perform arithmetic with arbitrary precision. A numeric constant has no type until it is given one, such as by explicit conversion.",
+  "tag": "Go",
+  "goal": 5,
+  "completed": 0,
+  "tries": 0,
+  "successrate": 0
  }
 ]
