@@ -128,5 +128,25 @@
   "completed": 0,
   "tries": 0,
   "successrate": 0
+ },
+ {
+  "id": "c9del51sluv26qhf1m80",
+  "question": "What is a multiplexor?",
+  "answer": "A multiplexor is a three-input gate that uses one of the inputs, called the selection bit, to select and output one of the other two inputs, called data bits. If the selector is 0 it returns the first data bit, if the selector is 1, it returns the second data bit.",
+  "tag": "Computer Systems",
+  "goal": 5,
+  "completed": 0,
+  "tries": 0,
+  "successrate": 0
+ },
+ {
+  "id": "c9deln1sluv3rf822ak0",
+  "question": "What is a Demultiplexor?",
+  "answer": "A demultiplexor performs the opposite function of the multiplexor: it takes a single input and channels it to one of two possible outputs, according to a selector bit that specifies which output to choose.",
+  "tag": "Computing Systems",
+  "goal": 5,
+  "completed": 0,
+  "tries": 0,
+  "successrate": 0
  }
 ]
