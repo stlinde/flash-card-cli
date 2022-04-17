@@ -148,5 +148,15 @@
   "completed": 0,
   "tries": 0,
   "successrate": 0
+ },
+ {
+  "id": "c9e2319sluv9820k59p0",
+  "question": "What does Random Access mean when referring to Randmo Access Memory?",
+  "answer": "The random access requirement of the random access memory refers to the fact that we require that any word in the memory - irrespective of its physical location - can be accessed directly, in equal speed. This is satisfied by assigning each word in the n-register RAM a unique address (an integer between 0 to n-1). Second, in addition to building an array of n registers, we build a gate logic design that, given an address j, is capable of selecting the individual register whose address is j. ",
+  "tag": "Computer Systems",
+  "goal": 5,
+  "completed": 0,
+  "tries": 0,
+  "successrate": 0
  }
 ]
